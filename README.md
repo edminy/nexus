@@ -49,11 +49,11 @@ Nexus brings agent management, task collaboration, and external service connecti
 
 ## Quick Start
 
-### Install Claude Code (optional)
+### Choose an Agent runtime backend
 
-Nexus ships with `nxs` (native Nexus) agent runtime as the default, so the backend machine does **not** require Claude Code. The native runtime talks to LLM APIs directly (both Anthropic Messages and OpenAI Chat Completions protocols are supported) and uses the bundled `nexusctl` binary via the `NEXUSCTL_COMMAND_PATH` environment variable.
+Nexus supports two Agent runtime backends: `nxs` (native Nexus) and `claude` (Claude Code). `nxs` is bundled as the default backend; it talks to LLM APIs directly (both Anthropic Messages and OpenAI Chat Completions protocols are supported) and receives an explicit `nexusctl` command path through the `NEXUSCTL_COMMAND_PATH` environment variable.
 
-Install Claude Code only if you want agents to run inside a real Claude Code environment (with its full skill / hook / toolchain): switch the agent's runtime to `claude` and make sure `claude` is available in the backend machine's `PATH`.
+The `claude` backend runs agents through Claude Code. To use it, install Claude Code separately, switch the agent runtime to `claude`, and make sure `claude` is available in the backend machine's `PATH`.
 
 ```bash
 # macOS / Linux / WSL
